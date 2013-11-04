@@ -1,0 +1,7 @@
+{
+  "name": "lesson1",
+  "version": "0.0.0",
+  "dependencies": {
+    "reveal.js": "master"
+  }
+}
