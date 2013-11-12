@@ -50,8 +50,9 @@ function strEmpty(str) {
 
 var winner = "#{winner}";
 var postVictory = "Player:\"" + winner + "\" wins!";
+var cellIdSeparator = "_";
 function verificationConditionsVictory(cell) {
-  var cellIdSplitArr = cell.id.split("_");
+  var cellIdSplitArr = cell.id.split(cellIdSeparator);
   var rowIndex = cellIdSplitArr[1];
   var columnIndex = cellIdSplitArr[2];
 
@@ -73,7 +74,7 @@ function playerWins(rowIndex, columnIndex) {
 var cellPrefix = "cell_";
 function horizontalCheck(rowIndex) {
   for (var columnId = columnStartVal; columnId < columnSize; columnId++) {
-    var cellId = cellPrefix + rowIndex + "_" + columnId;
+    var cellId = cellPrefix + rowIndex + cellIdSeparator + columnId;
     var cell = document.getElementById(cellId);
     if (cell.innerHTML != currentCharacter) {
       return false;
@@ -84,7 +85,7 @@ function horizontalCheck(rowIndex) {
 
 function verticalCheck(columnIndex) {
   for (var rowId = rowStartVal; rowId < rowSize; rowId++) {
-    var cellId = cellPrefix + rowId + "_" + columnIndex;
+    var cellId = cellPrefix + rowId + cellIdSeparator + columnIndex;
     var cell = document.getElementById(cellId);
     if (cell.innerHTML != currentCharacter) {
       return false;
@@ -114,7 +115,7 @@ function diagonalCheck(diagonal) {
 function getMainDiagonal() {
   var arr = [];
   for (var rowId = rowStartVal; rowId < rowSize; rowId++) {
-    arr.push(cellPrefix + rowId + "_" + rowId);
+    arr.push(cellPrefix + rowId + cellIdSeparator + rowId);
   }
   return arr;
 }
@@ -124,7 +125,7 @@ function getIncidentalDiagonal() {
   var index = columnSize;
   for (var rowId = rowStartVal; rowId < rowSize; rowId++) {
     index--;
-    arr.push(cellPrefix + rowId + "_" + index);
+    arr.push(cellPrefix + rowId + cellIdSeparator + index);
   }
   return arr;
 }
