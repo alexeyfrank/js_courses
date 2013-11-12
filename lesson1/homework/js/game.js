@@ -43,7 +43,24 @@ function strEmpty(str) {
   return false;
 }
 
-function verificationConditionsVictory() {
+var winner = "#{winner}";
+var postVictory = "Player:\"" + winner + "\" wins!";
+function verificationConditionsVictory(cell) {
+  var cellIdSplitArr = cell.id.split("_");
+  var rowIndex = cellIdSplitArr[1];
+  var columnIndex = cellIdSplitArr[2];
+
+  if (playerWins(rowIndex, columnIndex)) {
+    // JS not support interpolation strings = (
+    var message = postVictory.replace(winner, currentCharacter);
+    alert(message);
+    initializeGame();
+    return true;
+  }
+  return false;
+}
+
+function playerWins(rowIndex, columnIndex) {
   return false;
 }
 
