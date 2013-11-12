@@ -13,4 +13,24 @@ function stroke() {
   transitionPprogress();
 }
 
+var cellIsOccupiedMessage = "Эта ячейка занята!";
+function takeСell(cell) {
+  var text = cell.innerHTML;
+  if (strEmpty(text)) {
+    cell.innerHTML = currentCharacter;
+  } else {
+    alert(cellIsOccupiedMessage);
+  }
+}
+
+var emptyString = "";
+var anyWhitespaceCharacterRegexp = /\s/g;
+function strEmpty(str) {
+  str = str.replace(anyWhitespaceCharacterRegexp, emptyString);
+  if (emptyString === str) {
+    return true;
+  }
+  return false;
+}
+
 initializeGame();
