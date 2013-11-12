@@ -93,7 +93,7 @@ function verticalCheck(columnIndex) {
 }
 
 function diagonalsCheck() {
-  return mainDiagonalCheck();
+  return mainDiagonalCheck() || incidentalDiagonalCheck();
 }
 
 function mainDiagonalCheck() {
@@ -108,11 +108,33 @@ function mainDiagonalCheck() {
   return sum == mainDiagonal.length? true : false;
 }
 
+function incidentalDiagonalCheck() {
+  var incidentalDiagonal = getIncidentalDiagonal();
+  var sum = 0;
+  for (var cellId in incidentalDiagonal) {
+    var cell = document.getElementById(incidentalDiagonal[cellId]);
+    if (cell.innerHTML == currentCharacter) {
+      sum++;
+    }
+  }
+  return sum == incidentalDiagonal.length? true : false;
+}
+
 var cellPrefix = "cell_"
 function getMainDiagonal() {
   var arr = [];
   for (var rowId = rowStartVal; rowId < rowSize; rowId++) {
     arr.push(cellPrefix + rowId + "_" + rowId);
+  }
+  return arr;
+}
+
+function getIncidentalDiagonal() {
+  var arr = [];
+  var index = columnSize;
+  for (var rowId = rowStartVal; rowId < rowSize; rowId++) {
+    index--;
+    arr.push(cellPrefix + rowId + "_" + index);
   }
   return arr;
 }
