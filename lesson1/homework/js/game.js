@@ -37,4 +37,12 @@ function verificationConditionsVictory() {
   return false;
 }
 
+function transitionPprogress() {
+  if (currentCharacter == playerСharacter) {
+    currentCharacter = computerCharacter;
+  } else {
+    currentCharacter = playerСharacter;
+  }
+}
+
 initializeGame();
