@@ -1,0 +1,20 @@
+.div-table{
+  display: table;
+  width: auto;
+  background-color: #eee;
+  border: 1px solid  #666666;
+  border-spacing: 5px;
+}
+.div-table-row{
+  display: table-row;
+  width: auto;
+  clear: both;
+}
+.div-table-col{
+  float: left;
+  display: table-column;
+  background-color: #ccc;
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
+}
