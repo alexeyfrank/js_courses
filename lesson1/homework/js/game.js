@@ -6,4 +6,11 @@ function initializeGame() {
   currentCharacter = playerСharacter;
 }
 
+function stroke() {
+  var cell = event.target;
+  takeСell(cell);
+  verificationConditionsVictory();
+  transitionPprogress();
+}
+
 initializeGame();
