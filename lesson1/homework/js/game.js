@@ -4,6 +4,8 @@ var currentCharacter;
 var zeroBased = 0;
 var columnStartVal = zeroBased;
 var columnSize = 3;
+var rowSize = 3;
+var rowStartVal = zeroBased;
 
 function initializeGame() {
   clearFields();
@@ -64,12 +66,23 @@ function verificationConditionsVictory(cell) {
 }
 
 function playerWins(rowIndex, columnIndex) {
-  return horizontalCheck(rowIndex);
+  return horizontalCheck(rowIndex) || verticalCheck(columnIndex);
 }
 
 function horizontalCheck(rowIndex) {
   for (var columnId = columnStartVal; columnId < columnSize; columnId++) {
     var cellId = "cell_" + rowIndex + "_" + columnId;
+    var cell = document.getElementById(cellId);
+    if (cell.innerHTML != currentCharacter) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function verticalCheck(columnIndex) {
+  for (var rowId = rowStartVal; rowId < rowSize; rowId++) {
+    var cellId = "cell_" + rowId + "_" + columnIndex;
     var cell = document.getElementById(cellId);
     if (cell.innerHTML != currentCharacter) {
       return false;
