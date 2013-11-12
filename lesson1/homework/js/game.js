@@ -33,4 +33,8 @@ function strEmpty(str) {
   return false;
 }
 
+function verificationConditionsVictory() {
+  return false;
+}
+
 initializeGame();
