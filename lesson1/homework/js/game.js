@@ -93,31 +93,21 @@ function verticalCheck(columnIndex) {
 }
 
 function diagonalsCheck() {
-  return mainDiagonalCheck() || incidentalDiagonalCheck();
-}
-
-function mainDiagonalCheck() {
   var mainDiagonal = getMainDiagonal();
-  var sum = 0;
-  for (var cellId in mainDiagonal) {
-    var cell = document.getElementById(mainDiagonal[cellId]);
-    if (cell.innerHTML == currentCharacter) {
-      sum++;
-    }
-  }
-  return sum == mainDiagonal.length? true : false;
+  var incidentalDiagonal = getIncidentalDiagonal();
+
+  return diagonalCheck(mainDiagonal) || diagonalCheck(incidentalDiagonal);
 }
 
-function incidentalDiagonalCheck() {
-  var incidentalDiagonal = getIncidentalDiagonal();
+function diagonalCheck(diagonal) {
   var sum = 0;
-  for (var cellId in incidentalDiagonal) {
-    var cell = document.getElementById(incidentalDiagonal[cellId]);
+  for (var cellId in diagonal) {
+    var cell = document.getElementById(diagonal[cellId]);
     if (cell.innerHTML == currentCharacter) {
       sum++;
     }
   }
-  return sum == incidentalDiagonal.length? true : false;
+  return sum == diagonal.length? true : false;
 }
 
 var cellPrefix = "cell_"
