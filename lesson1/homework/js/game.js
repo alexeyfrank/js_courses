@@ -23,7 +23,7 @@ function stroke() {
   transitionPprogress();
 }
 
-var cellIsOccupiedMessage = "Эта ячейка занята!";
+var cellIsOccupiedMessage = "This cell is not empty!";
 function takeСell(cell) {
   var text = cell.innerHTML;
   if (strEmpty(text)) {
