@@ -3,7 +3,17 @@ var computerCharacter = "O";
 var currentCharacter;
 
 function initializeGame() {
+  clearFields();
   currentCharacter = playerСharacter;
+}
+
+var cellClassName = "div-table-col";
+var emptyString = "";
+function clearFields() {
+  var cellArr = document.getElementsByClassName(cellClassName);
+  for (var cell in cellArr) {
+    cellArr[cell].innerHTML = emptyString;
+  }
 }
 
 function stroke() {
@@ -23,7 +33,6 @@ function takeСell(cell) {
   }
 }
 
-var emptyString = "";
 var anyWhitespaceCharacterRegexp = /\s/g;
 function strEmpty(str) {
   str = str.replace(anyWhitespaceCharacterRegexp, emptyString);
