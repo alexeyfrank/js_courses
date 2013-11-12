@@ -19,8 +19,9 @@ function clearFields() {
 function stroke() {
   var cell = event.target;
   takeСell(cell);
-  verificationConditionsVictory();
-  transitionPprogress();
+  if (!verificationConditionsVictory(cell)) {
+    transitionPprogress();
+  }
 }
 
 var cellIsOccupiedMessage = "This cell is not empty!";
