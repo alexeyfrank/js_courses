@@ -70,9 +70,10 @@ function playerWins(rowIndex, columnIndex) {
     || diagonalsCheck();
 }
 
+var cellPrefix = "cell_";
 function horizontalCheck(rowIndex) {
   for (var columnId = columnStartVal; columnId < columnSize; columnId++) {
-    var cellId = "cell_" + rowIndex + "_" + columnId;
+    var cellId = cellPrefix + rowIndex + "_" + columnId;
     var cell = document.getElementById(cellId);
     if (cell.innerHTML != currentCharacter) {
       return false;
@@ -83,7 +84,7 @@ function horizontalCheck(rowIndex) {
 
 function verticalCheck(columnIndex) {
   for (var rowId = rowStartVal; rowId < rowSize; rowId++) {
-    var cellId = "cell_" + rowId + "_" + columnIndex;
+    var cellId = cellPrefix + rowId + "_" + columnIndex;
     var cell = document.getElementById(cellId);
     if (cell.innerHTML != currentCharacter) {
       return false;
@@ -110,7 +111,6 @@ function diagonalCheck(diagonal) {
   return sum == diagonal.length? true : false;
 }
 
-var cellPrefix = "cell_"
 function getMainDiagonal() {
   var arr = [];
   for (var rowId = rowStartVal; rowId < rowSize; rowId++) {
