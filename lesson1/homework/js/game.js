@@ -1,6 +1,9 @@
 var playerСharacter = "X";
 var computerCharacter = "O";
 var currentCharacter;
+var zeroBased = 0;
+var columnStartVal = zeroBased;
+var columnSize = 3;
 
 function initializeGame() {
   clearFields();
@@ -61,7 +64,18 @@ function verificationConditionsVictory(cell) {
 }
 
 function playerWins(rowIndex, columnIndex) {
-  return false;
+  return horizontalCheck(rowIndex);
+}
+
+function horizontalCheck(rowIndex) {
+  for (var columnId = columnStartVal; columnId < columnSize; columnId++) {
+    var cellId = "cell_" + rowIndex + "_" + columnId;
+    var cell = document.getElementById(cellId);
+    if (cell.innerHTML != currentCharacter) {
+      return false;
+    }
+  }
+  return true;
 }
 
 function transitionPprogress() {
