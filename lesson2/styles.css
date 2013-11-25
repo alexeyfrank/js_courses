@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* border: 0; */
+}
+
+.clearfix {
+  clear: both;
+}
+
+#container {
+  top: 0;
+}
+
+.simpleSearch {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.simpleSearch form > * {
+  display: inline-block;
+}
