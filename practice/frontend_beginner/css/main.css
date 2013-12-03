@@ -1,0 +1,58 @@
+
+
+/* ==========================================================================
+Author's custom styles
+========================================================================== */
+
+
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.todo-app {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.todo-app h2 {
+  margin-bottom: 15px;
+}
+
+.input-fields {
+  margin-bottom: 20px;
+}
+
+ul {
+  padding-left: 5px;
+  list-style: none;
+}
+
+.todo-item {
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  margin-bottom: 10px;
+}
+.todo-item.finished {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.todo-item.name {
+  line-height: 30px;
+}
+
+
+.new-task-input {
+  margin-right: 15px;
+}
+
+
+
+
+
+
+
+
+
